@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("micro/api")
+
 public class MoveInfoController {
      @Autowired
     MovieInfoServiceImp serviceImp;
@@ -30,5 +30,9 @@ public class MoveInfoController {
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+    }
+    @GetMapping("/movie-info/find-path-by-id/{movieInfoId}")
+    public String getPathById(@PathVariable Long movieInfoId){
+        return serviceImp.getPathById(movieInfoId);
     }
 }

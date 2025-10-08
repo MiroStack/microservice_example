@@ -8,4 +8,5 @@ import java.util.List;
 public interface MovieInfoService {
     ApiResponseModel saveAllMovieInfo(List<MoveInfoEntity> movieInfoList);
     ApiResponseModel getALLMovieInfo();
+    String getPathById(Long id);
 }
